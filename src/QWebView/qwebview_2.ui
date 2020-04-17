@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QWebViewClass</class>
+ <widget class="QMainWindow" name="QWebViewClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1133</width>
+    <height>840</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>QWebView</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#main_wid {
+background-color: rgb(0, 85, 0);
+}
+
+#nativeContainer {
+	background-color: rgb(170, 255, 255);
+}
+
+#cefContainer {
+background-color: rgb(85, 170, 255);
+}
+
+
+#localContainer {
+background-color: rgb(255, 85, 0);
+}</string>
+  </property>
+  <widget class="QWidget" name="main_wid">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QWidget" name="nativeContainer" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>120</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>120</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_nativeContainer">
+       <property name="spacing">
+        <number>6</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="styleSheet">
+          <string notr="true">#label{
+	font: 12pt &quot;MS Shell Dlg 2&quot;;
+}</string>
+         </property>
+         <property name="text">
+          <string>Native Area</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_changeColor">
+         <property name="text">
+          <string>ChangeColor</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="Container">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="cefContainer">
+       <attribute name="title">
+        <string>加载url</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="vl_url_container"/>
+      </widget>
+      <widget class="QWidget" name="localContainer">
+       <attribute name="title">
+        <string>加载本地html</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="vl_html_container"/>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="qwebview.qrc"/>
+ </resources>
+ <connections/>
+</ui>

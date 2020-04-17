@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QWebViewClass</class>
+ <widget class="QMainWindow" name="QWebViewClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>QWebView</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* MainWindow */
+
+QWidget#main_wid{
+	border:2px solid #1F2026;
+	border-radius:0px;
+	background: #05111d;
+}
+
+
+
+QPalette{background:#05111d;}*{outline:0px;color:#1a1a1a;}
+
+*{
+font-size:12px;
+font-family:&quot;微软雅黑&quot;;
+color:#1a1a1a;
+}
+
+
+QLabel{
+font-size:16px;
+font-family:&quot;微软雅黑&quot;;
+color:#FF0000;
+}
+
+
+QLabel#lab_logo{
+image: url(:/QWebView/Resources/logo_64_b.png);
+}
+
+QLabel#lab_main_title{
+font-size:16px;
+font-family:&quot;微软雅黑&quot;;
+color:#FF00FF;
+}
+
+QPushButton{
+font-size:16px;
+font-family:&quot;微软雅黑&quot;;
+color:#FF00FF;
+}
+
+
+
+QFrame#frame_title{
+	background: #FF00FF;
+
+}
+
+QFrame{
+border-top: 1px solid #111214;
+
+}
+
+QFrame{
+border-top: 1px solid #111214;
+border-bottom: 1px solid #111214;
+}
+
+QLineEdit{
+font-size:12px;
+font-family:&quot;微软雅黑&quot;;
+border: 1px solid #272D37;
+background:#4d73a9;
+padding:2px;
+selection-background-color:#00BB9E;
+selection-color:#FFFFFF;
+}
+
+QLineEdit:focus,QLineEdit:hover{
+border:1px solid #C0DCF2;
+
+
+}
+
+
+QPushButton#btn_close{
+image: url(:/QWebView/Resources/btn_close_n.png);
+border:outset;
+}
+
+QPushButton#btn_close:hover{
+image: url(:/QWebView/Resources/btn_close_h.png);
+border:outset;
+}
+
+QPushButton#btn_close:pressed{
+image: url(:/QWebView/Resources/btn_close_s.png);
+border:outset;
+}
+
+
+QTabWidget#Container{
+	background: #0d2e53;
+}
+QTabWidget::pane{
+	border:none;
+}
+QTabWidget::tab-bar{
+  alignment:left;
+}
+
+QTabBar::tab{
+	background:#0d2e53;
+	color: #D7E2E9;
+	min-width:60px;
+	min-height:30px;
+}
+
+QTabBar::tab:selected,QTabBar::tab:hover{
+	border: 1px solid #00BAFF;
+	background:#0d2e53;
+	color:#FFFFFF;
+}
+
+
+
+QTabBar::tab:top{
+padding:3px 8px 3px 8px;
+}
+
+QTabBar::tab:top:selected,QTabBar::tab:top:hover{
+border-width:2px 1px 0px 0px;
+}
+
+#nativeContainer {
+	background:#364657;
+
+}
+
+#cefContainer {
+	background: #0a396c;
+
+}
+
+
+#localContainer {
+	background: #10386b;
+
+}
+
+
+</string>
+  </property>
+  <widget class="QWidget" name="main_wid">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>9</number>
+    </property>
+    <property name="topMargin">
+     <number>9</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="frame_title">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+      <layout class="QHBoxLayout" name="frame_title_layout_2">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>6</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>6</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="lab_logo">
+         <property name="minimumSize">
+          <size>
+           <width>14</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>14</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="hzs_t_left">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>10</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="lab_main_title">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>自定义浏览器</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="hzs_t_mid">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Expanding</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>637</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_min">
+         <property name="minimumSize">
+          <size>
+           <width>37</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>37</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::ClickFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_max">
+         <property name="minimumSize">
+          <size>
+           <width>37</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>37</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::ClickFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_close">
+         <property name="minimumSize">
+          <size>
+           <width>37</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>37</width>
+           <height>28</height>
+          </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::ClickFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="nativeContainer" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>6</number>
+       </property>
+       <property name="leftMargin">
+        <number>3</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="btn_go_back">
+         <property name="text">
+          <string>GoBack</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_go_forward">
+         <property name="text">
+          <string>GoForward</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_reload_or_stop">
+         <property name="text">
+          <string>ReLoad</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lab_uri">
+         <property name="styleSheet">
+          <string notr="true">#label{
+	font: 12pt &quot;MS Shell Dlg 2&quot;;
+}</string>
+         </property>
+         <property name="text">
+          <string>URL:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="e_url"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_go">
+         <property name="text">
+          <string>GO</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_changeColor">
+         <property name="text">
+          <string>ChangeColor</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="Container">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="vl_container">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>20</number>
+       </property>
+       <property name="topMargin">
+        <number>20</number>
+       </property>
+       <property name="rightMargin">
+        <number>20</number>
+       </property>
+       <property name="bottomMargin">
+        <number>20</number>
+       </property>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="qwebview.qrc"/>
+ </resources>
+ <connections/>
+</ui>

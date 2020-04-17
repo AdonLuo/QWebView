@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="QWebView">
+    <file>Resources/btn_close_h.png</file>
+    <file>Resources/btn_close_n.png</file>
+    <file>Resources/btn_close_s.png</file>
+    <file>Resources/logo_64.png</file>
+    <file>Resources/logo_64_b.png</file>
+  </qresource>
+</RCC>
